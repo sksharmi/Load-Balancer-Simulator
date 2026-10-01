@@ -73,6 +73,7 @@ Each server stores:
 Server ID
 
 Weight
+
 Active connections
 
 Number of requests handled
@@ -97,11 +98,11 @@ Contains the LoadBalancer class.
 
 It implements:
 
-Round Robin
+1.Round Robin
 
-Least Connections
+2.Least Connections
 
-Weighted Load Balancing
+3.Weighted Load Balancing
 
 **simulator.py**
 
@@ -109,13 +110,13 @@ Contains the Simulator class.
 
 It:
 
-Sends requests to selected servers.
+.Sends requests to selected servers.
 
-Creates threads for concurrent processing.
+.Creates threads for concurrent processing.
 
-Waits for all requests to complete.
+.Waits for all requests to complete.
 
-Displays server statistics.
+.Displays server statistics.
 
 **main.py**
 
@@ -123,19 +124,19 @@ This is the main program.
 
 It:
 
-Creates servers.
+.Creates servers
 
-Generates requests.
+.Generates requests
 
-Runs all three load balancing strategies.
+.Runs all three load balancing strategies.
 
-Collects results.
+.Collects results.
 
-Compares request distribution.
+.Compares request distribution.
 
-Calculates average processing time.
+.Calculates average processing time.
 
-Displays load distribution percentages.
+.Displays load distribution percentages.
 
 **"Load Balancing Strategies":**
 
@@ -191,9 +192,9 @@ Higher-weight servers can receive more requests.
 
 **Multithreading**
 
-Python's threading module is used to simulate multiple requests being processed concurrently.
+.Python's threading module is used to simulate multiple requests being processed concurrently.
 
-For each request, the simulator creates a thread:
+.For each request, the simulator creates a thread:
 
 thread = threading.Thread(
 
@@ -212,13 +213,13 @@ thread.join()
 
 This allows the project to simulate concurrent request handling.
 
-Fair Comparison
+**Fair Comparison**
 
-The same set of 10 requests is used for all three strategies.
+.The same set of 10 requests is used for all three strategies.
 
-Each request is created once with a random processing time:
+.Each request is created once with a random processing time:
 
-processing_time = random.uniform(0.5, 2)
+.processing_time = random.uniform(0.5, 2)
 
 The same requests are then passed to:
 
@@ -263,9 +264,13 @@ Example:
 ================ COMPARISON ================
 
 Strategy                 S1        S2        S3
+
 -------------------------------------------------------
+
 Round Robin              4         3         3
+
 Least Connections        4         3         3
+
 Weighted                 2         3         5
 
 Load distribution:
@@ -273,9 +278,13 @@ Load distribution:
 ========== LOAD DISTRIBUTION (%) ==========
 
 Strategy                 S1        S2        S3
+
 -------------------------------------------------------
+
 Round Robin              40.0      30.0      30.0
+
 Least Connections        40.0      30.0      30.0
+
 Weighted                 20.0      30.0      50.0
 
 The exact values may change between executions because request processing times and concurrent scheduling can vary.
@@ -284,45 +293,45 @@ The exact values may change between executions because request processing times 
 
 The project uses Object-Oriented Programming concepts through classes.
 
-Classes
+.Classes
 
-Server
+.Server
 
-Request
+.Request
 
-LoadBalancer
+.LoadBalancer
 
-Simulator
+.Simulator
 
-Objects
+.Objects
 
-Objects are created from these classes to represent:
+!!Objects are created from these classes to represent:
 
-Servers
+.Servers
 
-Requests
+.Requests
 
-Load balancer
+.Load balancer
 
-Simulator
+.Simulator
 
-Encapsulation
+.Encapsulation
 
 Server statistics and server state are maintained inside the Server class.
 
 **Greedy Scheduling Concept**
 
-The Least Connections strategy follows a greedy approach.
+.The Least Connections strategy follows a greedy approach.
 
-For each incoming request, the simulator selects the server with the lowest current number of active connections.
+.For each incoming request, the simulator selects the server with the lowest current number of active connections.
 
-Instead of planning all future requests, it makes a decision based on the current server state.
+.Instead of planning all future requests, it makes a decision based on the current server state.
 
 **How to Run:**
 
-Make sure Python is installed.
+1.Make sure Python is installed.
 
-Open the project folder in a terminal.
+2.Open the project folder in a terminal.
 
 Run:
 
@@ -336,17 +345,17 @@ The Load Balancer Simulator demonstrates how different load balancing strategies
 
 The project combines:
 
-Load balancing algorithms
+1.Load balancing algorithms
 
-Greedy scheduling
+2.Greedy scheduling
 
-Object-Oriented Programming
+3.Object-Oriented Programming
 
-Multithreading
+4.Multithreading
 
-Performance measurement
+5.Performance measurement
 
-Load distribution analysis
+6.Load distribution analysis
 
 The simulator provides a simple way to understand how different server selection strategies affect request distribution in a multi-server environment.
 
